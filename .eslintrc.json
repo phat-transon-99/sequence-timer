@@ -19,5 +19,6 @@
         "react-native"
     ],
     "rules": {
+        "linebreak-style": ["error", "windows"]
     }
 }
