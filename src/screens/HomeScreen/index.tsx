@@ -1,6 +1,8 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { primaryColor } from '../../styles/colors';
+import BottomCard from './components/BottomCard';
+import TopTimeDisplay from './components/TopTimeDisplay';
 
 const styles = StyleSheet.create({
   screen: {
@@ -11,7 +13,10 @@ const styles = StyleSheet.create({
 
 function HomeScreen(): JSX.Element {
   return (
-    <View style={styles.screen} />
+    <View style={styles.screen}>
+      <TopTimeDisplay />
+      <BottomCard />
+    </View>
   );
 }
 
