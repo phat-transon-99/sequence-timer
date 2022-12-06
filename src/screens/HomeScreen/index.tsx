@@ -14,10 +14,12 @@ const styles = StyleSheet.create({
 
 function HomeScreen(): JSX.Element {
   const onPress = useCallback(() => {
+    // eslint-disable-next-line no-console
     console.log('on pressed');
   }, []);
 
   const onStartPress = useCallback(() => {
+    // eslint-disable-next-line no-console
     console.log('on start pressed');
   }, []);
 
