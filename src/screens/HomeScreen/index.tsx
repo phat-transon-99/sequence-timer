@@ -18,6 +18,8 @@ function HomeScreen(): JSX.Element {
       <TopTimeDisplay />
       <BottomCard>
         <TimerCard name="Drawing" icon="🌋" timeInSeconds={1600} color="#00C0FF" />
+        <TimerCard name="Drawing" icon="🌋" timeInSeconds={1600} color="#F7008D" />
+        <TimerCard name="Drawing" icon="🌋" timeInSeconds={1600} color="#F77F00" />
       </BottomCard>
     </View>
   );
