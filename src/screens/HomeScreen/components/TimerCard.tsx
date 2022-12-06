@@ -12,6 +12,8 @@ type TimeCardProps = {
   icon: string,
   color: string,
   timeInSeconds: number,
+  onPress: () => void,
+  onStartPress: () => void
 };
 
 const createStyle = (color: string) => StyleSheet.create({
@@ -53,17 +55,18 @@ const createStyle = (color: string) => StyleSheet.create({
     fontSize: 40,
   },
   playIcon: {
-    marginHorizontal: 15,
+    padding: 20,
+    borderRadius: 100,
   },
 });
 
 function TimerCard({
-  name, icon, color, timeInSeconds,
+  name, icon, color, timeInSeconds, onPress, onStartPress,
 }: TimeCardProps): JSX.Element {
   const styles = createStyle(color);
 
   return (
-    <TouchableOpacity style={styles.container} activeOpacity={0.8}>
+    <TouchableOpacity style={styles.container} activeOpacity={0.8} onPress={onPress}>
       <View style={styles.leftContainer}>
         <Text style={styles.timerIcon}>{ icon }</Text>
 
@@ -78,9 +81,9 @@ function TimerCard({
         </View>
       </View>
 
-      <View style={styles.playIcon}>
-        <FontAwesome5 name="play" size={24} color={whiteColor} />
-      </View>
+      <TouchableOpacity style={styles.playIcon} onPress={onStartPress}>
+        <FontAwesome5 name="play" size={28} color={whiteColor} />
+      </TouchableOpacity>
     </TouchableOpacity>
   );
 }
