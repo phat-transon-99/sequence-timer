@@ -2,6 +2,7 @@ import React from 'react';
 import {
   View, Text, StyleSheet, TouchableOpacity,
 } from 'react-native';
+import { FontAwesome5 } from '@expo/vector-icons';
 import CustomFontText from '../../../components/Text';
 import { blackColor, whiteColor } from '../../../styles/colors';
 import formatTimeStandard from '../../../utils/time';
@@ -68,6 +69,7 @@ function TimerCard({
         </CustomFontText>
       </View>
 
+      <FontAwesome5 name="play" size={24} color="black" />
     </TouchableOpacity>
   );
 }
