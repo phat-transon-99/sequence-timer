@@ -1,0 +1,68 @@
+import React from 'react';
+import {
+  View, Text, StyleSheet, TouchableOpacity,
+} from 'react-native';
+import { blackColor, whiteColor } from '../../../styles/colors';
+import formatTimeStandard from '../../../utils/time';
+
+type TimeCardProps = {
+  name: string,
+  icon: string,
+  color: string,
+  timeInSeconds: number,
+};
+
+const createStyle = (color: string) => StyleSheet.create({
+  container: {
+    alignItems: 'center',
+    elevation: 5,
+    backgroundColor: color,
+    borderRadius: 20,
+    flexDirection: 'row',
+    padding: 20,
+    shadowColor: blackColor,
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    width: '100%',
+  },
+  textContainer: {
+    marginHorizontal: 20,
+  },
+  header: {
+    color: whiteColor,
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginBottom: 5,
+  },
+  time: {
+    color: whiteColor,
+    fontSize: 15,
+  },
+  icon: {
+    fontSize: 40,
+  },
+});
+
+function TimerCard({
+  name, icon, color, timeInSeconds,
+}: TimeCardProps): JSX.Element {
+  const styles = createStyle(color);
+
+  return (
+    <TouchableOpacity style={styles.container}>
+      <Text style={styles.icon}>{ icon }</Text>
+
+      <View style={styles.textContainer}>
+        <Text style={styles.header}>{ name }</Text>
+        <Text style={styles.time}>{ formatTimeStandard(timeInSeconds) }</Text>
+      </View>
+
+    </TouchableOpacity>
+  );
+}
+
+export default TimerCard;
