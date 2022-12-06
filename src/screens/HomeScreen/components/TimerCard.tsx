@@ -23,6 +23,7 @@ const createStyle = (color: string) => StyleSheet.create({
     flexDirection: 'row',
     padding: 20,
     marginBottom: 15,
+    justifyContent: 'space-between',
     shadowColor: blackColor,
     shadowOffset: {
       width: 0,
@@ -32,21 +33,27 @@ const createStyle = (color: string) => StyleSheet.create({
     shadowRadius: 3.84,
     width: '100%',
   },
+  leftContainer: {
+    flexDirection: 'row',
+  },
   textContainer: {
     marginHorizontal: 15,
   },
-  header: {
+  headerText: {
     color: whiteColor,
     fontSize: 20,
     fontWeight: 'bold',
     marginBottom: 5,
   },
-  time: {
+  timeText: {
     color: whiteColor,
     fontSize: 15,
   },
-  icon: {
+  timerIcon: {
     fontSize: 40,
+  },
+  playIcon: {
+    marginHorizontal: 15,
   },
 });
 
@@ -56,20 +63,24 @@ function TimerCard({
   const styles = createStyle(color);
 
   return (
-    <TouchableOpacity style={styles.container}>
-      <Text style={styles.icon}>{ icon }</Text>
+    <TouchableOpacity style={styles.container} activeOpacity={0.8}>
+      <View style={styles.leftContainer}>
+        <Text style={styles.timerIcon}>{ icon }</Text>
 
-      <View style={styles.textContainer}>
-        <CustomFontText>
-          <Text style={styles.header}>{ name }</Text>
-        </CustomFontText>
+        <View style={styles.textContainer}>
+          <CustomFontText>
+            <Text style={styles.headerText}>{ name }</Text>
+          </CustomFontText>
 
-        <CustomFontText>
-          <Text style={styles.time}>{ formatTimeStandard(timeInSeconds) }</Text>
-        </CustomFontText>
+          <CustomFontText>
+            <Text style={styles.timeText}>{ formatTimeStandard(timeInSeconds) }</Text>
+          </CustomFontText>
+        </View>
       </View>
 
-      <FontAwesome5 name="play" size={24} color="black" />
+      <View style={styles.playIcon}>
+        <FontAwesome5 name="play" size={24} color={whiteColor} />
+      </View>
     </TouchableOpacity>
   );
 }
