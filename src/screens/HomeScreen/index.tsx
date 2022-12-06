@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { View, StyleSheet } from 'react-native';
 import { primaryColor } from '../../styles/colors';
 import BottomCard from './components/BottomCard';
@@ -13,13 +13,21 @@ const styles = StyleSheet.create({
 });
 
 function HomeScreen(): JSX.Element {
+  const onPress = useCallback(() => {
+    console.log('on pressed');
+  }, []);
+
+  const onStartPress = useCallback(() => {
+    console.log('on start pressed');
+  }, []);
+
   return (
     <View style={styles.screen}>
       <TopTimeDisplay />
       <BottomCard>
-        <TimerCard name="Drawing" icon="🌋" timeInSeconds={1600} color="#00C0FF" />
-        <TimerCard name="Drawing" icon="🌋" timeInSeconds={1600} color="#F7008D" />
-        <TimerCard name="Drawing" icon="🌋" timeInSeconds={1600} color="#F77F00" />
+        <TimerCard name="Drawing" icon="🌋" timeInSeconds={1600} color="#00C0FF" onPress={onPress} onStartPress={onStartPress} />
+        <TimerCard name="Drawing" icon="🌋" timeInSeconds={1600} color="#F7008D" onPress={onPress} onStartPress={onStartPress} />
+        <TimerCard name="Drawing" icon="🌋" timeInSeconds={1600} color="#F77F00" onPress={onPress} onStartPress={onStartPress} />
       </BottomCard>
     </View>
   );
