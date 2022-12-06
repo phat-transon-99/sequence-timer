@@ -3,7 +3,7 @@ import {
   View, Text, StyleSheet, TouchableOpacity,
 } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
-import CustomFontText from '../../../components/Text';
+import { CustomFontText, CustomFontTextBold } from '../../../components/Text';
 import { blackColor, whiteColor } from '../../../styles/colors';
 import formatTimeStandard from '../../../utils/time';
 
@@ -44,8 +44,6 @@ const createStyle = (color: string) => StyleSheet.create({
   headerText: {
     color: whiteColor,
     fontSize: 20,
-    fontWeight: 'bold',
-    marginBottom: 5,
   },
   timeText: {
     color: whiteColor,
@@ -71,9 +69,11 @@ function TimerCard({
         <Text style={styles.timerIcon}>{ icon }</Text>
 
         <View style={styles.textContainer}>
-          <CustomFontText>
-            <Text style={styles.headerText}>{ name }</Text>
-          </CustomFontText>
+          <View style={{ marginBottom: 5 }}>
+            <CustomFontTextBold>
+              <Text style={styles.headerText}>{ name }</Text>
+            </CustomFontTextBold>
+          </View>
 
           <CustomFontText>
             <Text style={styles.timeText}>{ formatTimeStandard(timeInSeconds) }</Text>
@@ -82,7 +82,7 @@ function TimerCard({
       </View>
 
       <TouchableOpacity style={styles.playIcon} onPress={onStartPress}>
-        <FontAwesome5 name="play" size={28} color={whiteColor} />
+        <FontAwesome5 name="play" size={24} color={whiteColor} />
       </TouchableOpacity>
     </TouchableOpacity>
   );
