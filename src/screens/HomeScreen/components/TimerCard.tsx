@@ -17,9 +17,10 @@ const createStyle = (color: string) => StyleSheet.create({
     alignItems: 'center',
     elevation: 5,
     backgroundColor: color,
-    borderRadius: 20,
+    borderRadius: 15,
     flexDirection: 'row',
     padding: 20,
+    marginBottom: 15,
     shadowColor: blackColor,
     shadowOffset: {
       width: 0,
