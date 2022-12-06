@@ -12,7 +12,8 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 40,
     borderTopRightRadius: 40,
     flex: 2.5,
-    padding: 20,
+    paddingHorizontal: 30,
+    paddingVertical: 40,
   },
 });
 
