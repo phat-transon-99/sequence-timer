@@ -2,6 +2,7 @@ import React from 'react';
 import {
   View, Text, StyleSheet, TouchableOpacity,
 } from 'react-native';
+import CustomFontText from '../../../components/Text';
 import { blackColor, whiteColor } from '../../../styles/colors';
 import formatTimeStandard from '../../../utils/time';
 
@@ -31,7 +32,7 @@ const createStyle = (color: string) => StyleSheet.create({
     width: '100%',
   },
   textContainer: {
-    marginHorizontal: 20,
+    marginHorizontal: 15,
   },
   header: {
     color: whiteColor,
@@ -58,8 +59,13 @@ function TimerCard({
       <Text style={styles.icon}>{ icon }</Text>
 
       <View style={styles.textContainer}>
-        <Text style={styles.header}>{ name }</Text>
-        <Text style={styles.time}>{ formatTimeStandard(timeInSeconds) }</Text>
+        <CustomFontText>
+          <Text style={styles.header}>{ name }</Text>
+        </CustomFontText>
+
+        <CustomFontText>
+          <Text style={styles.time}>{ formatTimeStandard(timeInSeconds) }</Text>
+        </CustomFontText>
       </View>
 
     </TouchableOpacity>
