@@ -2,7 +2,7 @@ import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { primaryColor } from '../../styles/colors';
 import BottomCard from './components/BottomCard';
-import TimerCard from './components/TimerCard';
+import TimerCardList, { ExtendedTimerCardProps } from './components/TimerCardList';
 import TopTimeDisplay from './components/TopTimeDisplay';
 
 const styles = StyleSheet.create({
@@ -12,14 +12,27 @@ const styles = StyleSheet.create({
   },
 });
 
+const items: ExtendedTimerCardProps[] = [
+  {
+    id: 1, name: 'Drawing', icon: '🌋', timeInSeconds: 1600, color: '#F77F00',
+  },
+  {
+    id: 2, name: 'Drawing', icon: '🌋', timeInSeconds: 1600, color: '#F77F00',
+  },
+  {
+    id: 3, name: 'Drawing', icon: '🌋', timeInSeconds: 1600, color: '#F77F00',
+  },
+  {
+    id: 4, name: 'Drawing', icon: '🌋', timeInSeconds: 1600, color: '#F77F00',
+  },
+];
+
 function HomeScreen(): JSX.Element {
   return (
     <View style={styles.screen}>
       <TopTimeDisplay />
       <BottomCard>
-        <TimerCard name="Drawing" icon="🌋" timeInSeconds={1600} color="#00C0FF" />
-        <TimerCard name="Drawing" icon="🌋" timeInSeconds={1600} color="#F7008D" />
-        <TimerCard name="Drawing" icon="🌋" timeInSeconds={1600} color="#F77F00" />
+        <TimerCardList timers={items} />
       </BottomCard>
     </View>
   );
