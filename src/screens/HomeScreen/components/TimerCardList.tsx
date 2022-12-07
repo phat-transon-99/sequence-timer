@@ -10,7 +10,7 @@ type TimerCardListProps = {
 
 const styles = StyleSheet.create({
   list: {
-    marginTop: 40,
+    marginTop: 25,
     marginHorizontal: 30,
   },
 });
