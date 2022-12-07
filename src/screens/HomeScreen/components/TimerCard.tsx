@@ -6,12 +6,9 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import { CustomFontText, CustomFontTextBold } from '../../../components/Text';
 import { blackColor, whiteColor } from '../../../styles/colors';
 import formatTimeStandard from '../../../utils/time';
+import Timer from '../../../models/Timer';
 
-export type TimerCardProps = {
-  name: string,
-  icon: string,
-  color: string,
-  timeInSeconds: number,
+export type TimerCardProps = Timer & {
   onPress?: () => void,
   onStartPress?: () => void
 };

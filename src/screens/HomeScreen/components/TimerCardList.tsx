@@ -1,11 +1,10 @@
 import React from 'react';
 import { FlatList, StyleSheet } from 'react-native';
-import TimerCard, { TimerCardProps } from './TimerCard';
-
-export type ExtendedTimerCardProps = TimerCardProps & { id: number };
+import Timer from '../../../models/Timer';
+import TimerCard from './TimerCard';
 
 type TimerCardListProps = {
-  timers: ExtendedTimerCardProps[]
+  timers: Timer[]
 };
 
 const styles = StyleSheet.create({
@@ -22,6 +21,7 @@ function TimerCardList({ timers }: TimerCardListProps): JSX.Element {
       keyExtractor={(item) => item.id.toString()}
       renderItem={(entry) => (
         <TimerCard
+          id={entry.item.id}
           name={entry.item.name}
           icon={entry.item.icon}
           color={entry.item.color}
