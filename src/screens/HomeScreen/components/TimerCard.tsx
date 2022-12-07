@@ -12,8 +12,8 @@ type TimeCardProps = {
   icon: string,
   color: string,
   timeInSeconds: number,
-  onPress: () => void,
-  onStartPress: () => void
+  onPress?: () => void,
+  onStartPress?: () => void
 };
 
 const createStyle = (color: string) => StyleSheet.create({
