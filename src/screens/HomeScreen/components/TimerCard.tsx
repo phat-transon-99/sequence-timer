@@ -7,7 +7,7 @@ import { CustomFontText, CustomFontTextBold } from '../../../components/Text';
 import { blackColor, whiteColor } from '../../../styles/colors';
 import formatTimeStandard from '../../../utils/time';
 
-type TimeCardProps = {
+export type TimerCardProps = {
   name: string,
   icon: string,
   color: string,
@@ -60,7 +60,7 @@ const createStyle = (color: string) => StyleSheet.create({
 
 function TimerCard({
   name, icon, color, timeInSeconds, onPress, onStartPress,
-}: TimeCardProps): JSX.Element {
+}: TimerCardProps): JSX.Element {
   const styles = createStyle(color);
 
   return (
