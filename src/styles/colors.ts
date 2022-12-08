@@ -1,3 +1,3 @@
-export const primaryColor: string = '#4361EE';
-export const whiteColor: string = '#ffffff';
-export const blackColor: string = '#000000';
+export const PRIMARY_COLOR = '#4361EE';
+export const WHITE_COLOR = '#ffffff';
+export const BLACK_COLOR = '#000000';
