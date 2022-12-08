@@ -1,8 +1,9 @@
 import { StyleSheet } from 'react-native';
+import { MARGIN_LARGE, MARGIN_MEDIUM } from '../../../../styles/dims';
 
 export default StyleSheet.create({
   list: {
-    marginTop: 25,
-    marginHorizontal: 30,
+    marginTop: MARGIN_MEDIUM,
+    marginHorizontal: MARGIN_LARGE,
   },
 });

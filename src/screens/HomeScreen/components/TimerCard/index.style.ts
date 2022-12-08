@@ -1,18 +1,21 @@
 import { StyleSheet } from 'react-native';
 import { FONTSIZE_MEDIUM, FONTSIZE_SMALL, FONTSIZE_XLARGE } from '../../../../styles/fonts';
-import { blackColor, whiteColor } from '../../../../styles/colors';
+import { BLACK_COLOR, WHITE_COLOR } from '../../../../styles/colors';
+import {
+  BORDERRADIUS_ULARGE, BORDERRADIUS_XSMALL, PADDING_MEDIUM, PADDING_SMALL,
+} from '../../../../styles/dims';
 
 export default (color: string) => StyleSheet.create({
   container: {
     alignItems: 'center',
     elevation: 5,
     backgroundColor: color,
-    borderRadius: 15,
+    borderRadius: BORDERRADIUS_XSMALL,
     flexDirection: 'row',
-    padding: 20,
+    padding: PADDING_SMALL,
     marginBottom: 15,
     justifyContent: 'space-between',
-    shadowColor: blackColor,
+    shadowColor: BLACK_COLOR,
     shadowOffset: {
       width: 0,
       height: 2,
@@ -28,18 +31,18 @@ export default (color: string) => StyleSheet.create({
     marginHorizontal: 15,
   },
   headerText: {
-    color: whiteColor,
+    color: WHITE_COLOR,
     fontSize: FONTSIZE_MEDIUM,
   },
   timeText: {
-    color: whiteColor,
+    color: WHITE_COLOR,
     fontSize: FONTSIZE_SMALL,
   },
   timerIcon: {
     fontSize: FONTSIZE_XLARGE,
   },
   playIcon: {
-    padding: 20,
-    borderRadius: 100,
+    padding: PADDING_MEDIUM,
+    borderRadius: BORDERRADIUS_ULARGE,
   },
 });
