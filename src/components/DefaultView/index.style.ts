@@ -1,11 +1,11 @@
 import { StyleSheet } from 'react-native';
-import { PRIMARY_COLOR } from '../../styles/colors';
+import { WHITE_COLOR } from '../../styles/colors';
 import { PADDING_LARGE } from '../../styles/dims';
 
-export default StyleSheet.create({
+export default (color: string | undefined) => StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: PADDING_LARGE,
-    backgroundColor: PRIMARY_COLOR,
+    backgroundColor: color || WHITE_COLOR,
   },
 });
