@@ -16,5 +16,5 @@ export default function formatTimeStandard(timeInSeconds: number): string {
   const seconds = timeInSeconds - hours * 3600 - minutes * 60;
 
   // Format the time and return
-  return `${prependZero(hours)}:${prependZero(minutes)}:${prependZero(seconds)}`;
+  return hours > 0 ? `${prependZero(hours)}:${prependZero(minutes)}:${prependZero(seconds)}` : `${prependZero(minutes)}:${prependZero(seconds)}`;
 }
