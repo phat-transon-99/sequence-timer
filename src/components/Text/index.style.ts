@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { FONTFAMILY_REGULAR, FONTFAMLIY_MEDIUM } from '../../styles/fonts';
+import { FONTFAMILY_REGULAR, FONTFAMLIY_MEDIUM, FONTWEIGHT_MEDIUM } from '../../styles/fonts';
 
 export default StyleSheet.create({
   text: {
@@ -7,5 +7,6 @@ export default StyleSheet.create({
   },
   textBold: {
     fontFamily: FONTFAMLIY_MEDIUM,
+    fontWeight: FONTWEIGHT_MEDIUM,
   },
 });
