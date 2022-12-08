@@ -3,11 +3,11 @@ import {
   View, Text, StyleSheet, TouchableOpacity,
 } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
-import { CustomFontText, CustomFontTextBold } from '../../../components/Text';
-import { blackColor, whiteColor } from '../../../styles/colors';
-import formatTimeStandard from '../../../utils/time';
-import Timer from '../../../models/Timer';
-import { FONTSIZE_MEDIUM, FONTSIZE_SMALL, FONTSIZE_XLARGE } from '../../../styles/fonts';
+import { CustomFontText, CustomFontTextBold } from '../../../../components/Text';
+import { blackColor, whiteColor } from '../../../../styles/colors';
+import formatTimeStandard from '../../../../utils/time';
+import Timer from '../../../../models/Timer';
+import { FONTSIZE_MEDIUM, FONTSIZE_SMALL, FONTSIZE_XLARGE } from '../../../../styles/fonts';
 
 export type TimerCardProps = Timer & {
   onPress?: () => void,

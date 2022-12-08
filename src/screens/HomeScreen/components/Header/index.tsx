@@ -3,9 +3,9 @@ import {
   View, Text, StyleSheet, TouchableOpacity,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { CustomFontText } from '../../../components/Text';
-import { primaryColor, whiteColor } from '../../../styles/colors';
-import { FONTSIZE_LARGE } from '../../../styles/fonts';
+import { CustomFontText } from '../../../../components/Text';
+import { primaryColor, whiteColor } from '../../../../styles/colors';
+import { FONTSIZE_LARGE } from '../../../../styles/fonts';
 
 type HeaderProps = {
   onAddClick: () => void

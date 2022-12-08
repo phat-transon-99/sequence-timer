@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import { whiteColor } from '../../../styles/colors';
+import { whiteColor } from '../../../../styles/colors';
 
 type CardProps = {
   children?: React.ReactNode

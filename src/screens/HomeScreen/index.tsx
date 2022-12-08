@@ -1,9 +1,10 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
+import Timer from '../../models/Timer';
 import { primaryColor } from '../../styles/colors';
 import BottomCard from './components/BottomCard';
 import Header from './components/Header';
-import TimerCardList, { ExtendedTimerCardProps } from './components/TimerCardList';
+import TimerCardList from './components/TimerCardList';
 import TopTimeDisplay from './components/TopTimeDisplay';
 
 const styles = StyleSheet.create({
@@ -13,7 +14,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const items: ExtendedTimerCardProps[] = [
+const items: Timer[] = [
   {
     id: 1, name: 'Drawing', icon: '🌋', timeInSeconds: 1600, color: '#F77F00',
   },

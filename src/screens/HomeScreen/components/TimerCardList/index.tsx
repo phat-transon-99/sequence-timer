@@ -1,7 +1,7 @@
 import React from 'react';
 import { FlatList, StyleSheet } from 'react-native';
-import Timer from '../../../models/Timer';
-import TimerCard from './TimerCard';
+import Timer from '../../../../models/Timer';
+import TimerCard from '../TimerCard';
 
 type TimerCardListProps = {
   timers: Timer[]
