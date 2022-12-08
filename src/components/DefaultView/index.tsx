@@ -1,12 +1,15 @@
 import React from 'react';
 import { View } from 'react-native';
-import styles from './index.style';
+import createStyle from './index.style';
 
 type Props = {
-  children: React.ReactNode
+  children: React.ReactNode,
+  color?: string
 };
 
-export default function DefaultView({ children }: Props): JSX.Element {
+export default function DefaultView({ children, color }: Props): JSX.Element {
+  const styles = createStyle(color);
+
   return (
     <View style={styles.container}>{ children }</View>
   );
