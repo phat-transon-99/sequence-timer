@@ -7,6 +7,7 @@ import { CustomFontText, CustomFontTextBold } from '../../../components/Text';
 import { blackColor, whiteColor } from '../../../styles/colors';
 import formatTimeStandard from '../../../utils/time';
 import Timer from '../../../models/Timer';
+import { FONTSIZE_MEDIUM, FONTSIZE_SMALL, FONTSIZE_XLARGE } from '../../../styles/fonts';
 
 export type TimerCardProps = Timer & {
   onPress?: () => void,
@@ -40,14 +41,14 @@ const createStyle = (color: string) => StyleSheet.create({
   },
   headerText: {
     color: whiteColor,
-    fontSize: 20,
+    fontSize: FONTSIZE_MEDIUM,
   },
   timeText: {
     color: whiteColor,
-    fontSize: 15,
+    fontSize: FONTSIZE_SMALL,
   },
   timerIcon: {
-    fontSize: 40,
+    fontSize: FONTSIZE_XLARGE,
   },
   playIcon: {
     padding: 20,

@@ -5,6 +5,7 @@ import {
 import { Ionicons } from '@expo/vector-icons';
 import { CustomFontText } from '../../../components/Text';
 import { primaryColor, whiteColor } from '../../../styles/colors';
+import { FONTSIZE_LARGE } from '../../../styles/fonts';
 
 type HeaderProps = {
   onAddClick: () => void
@@ -18,7 +19,7 @@ const styles = StyleSheet.create({
     marginTop: 35,
   },
   text: {
-    fontSize: 25,
+    fontSize: FONTSIZE_LARGE,
   },
   button: {
     backgroundColor: primaryColor,
