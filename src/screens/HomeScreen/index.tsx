@@ -1,5 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
+import DefaultView from '../../components/DefaultView';
 import Timer from '../../models/Timer';
 import BottomCard from './components/BottomCard';
 import Header from './components/Header';
@@ -24,13 +25,15 @@ const items: Timer[] = [
 
 function HomeScreen(): JSX.Element {
   return (
-    <View style={styles.screen}>
-      <TopTimeDisplay />
-      <BottomCard>
-        <Header onAddClick={() => {}} />
-        <TimerCardList timers={items} />
-      </BottomCard>
-    </View>
+    <DefaultView>
+      <View style={styles.screen}>
+        <TopTimeDisplay />
+        <BottomCard>
+          <Header onAddClick={() => {}} />
+          <TimerCardList timers={items} />
+        </BottomCard>
+      </View>
+    </DefaultView>
   );
 }
 
