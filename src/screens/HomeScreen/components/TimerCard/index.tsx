@@ -1,60 +1,18 @@
 import React from 'react';
 import {
-  View, Text, StyleSheet, TouchableOpacity,
+  View, Text, TouchableOpacity,
 } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { CustomFontText, CustomFontTextBold } from '../../../../components/Text';
-import { blackColor, whiteColor } from '../../../../styles/colors';
+import { whiteColor } from '../../../../styles/colors';
 import formatTimeStandard from '../../../../utils/time';
 import Timer from '../../../../models/Timer';
-import { FONTSIZE_MEDIUM, FONTSIZE_SMALL, FONTSIZE_XLARGE } from '../../../../styles/fonts';
+import createStyle from './index.style';
 
 export type TimerCardProps = Timer & {
   onPress?: () => void,
   onStartPress?: () => void
 };
-
-const createStyle = (color: string) => StyleSheet.create({
-  container: {
-    alignItems: 'center',
-    elevation: 5,
-    backgroundColor: color,
-    borderRadius: 15,
-    flexDirection: 'row',
-    padding: 20,
-    marginBottom: 15,
-    justifyContent: 'space-between',
-    shadowColor: blackColor,
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    width: '100%',
-  },
-  leftContainer: {
-    flexDirection: 'row',
-  },
-  textContainer: {
-    marginHorizontal: 15,
-  },
-  headerText: {
-    color: whiteColor,
-    fontSize: FONTSIZE_MEDIUM,
-  },
-  timeText: {
-    color: whiteColor,
-    fontSize: FONTSIZE_SMALL,
-  },
-  timerIcon: {
-    fontSize: FONTSIZE_XLARGE,
-  },
-  playIcon: {
-    padding: 20,
-    borderRadius: 100,
-  },
-});
 
 function TimerCard({
   name, icon, color, timeInSeconds, onPress, onStartPress,

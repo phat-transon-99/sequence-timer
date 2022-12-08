@@ -1,35 +1,15 @@
 import React from 'react';
 import {
-  View, Text, StyleSheet, TouchableOpacity,
+  View, Text, TouchableOpacity,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { CustomFontText } from '../../../../components/Text';
-import { primaryColor, whiteColor } from '../../../../styles/colors';
-import { FONTSIZE_LARGE } from '../../../../styles/fonts';
+import { whiteColor } from '../../../../styles/colors';
+import styles from './index.style';
 
 type HeaderProps = {
   onAddClick: () => void
 };
-
-const styles = StyleSheet.create({
-  header: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginHorizontal: 30,
-    marginTop: 35,
-  },
-  text: {
-    fontSize: FONTSIZE_LARGE,
-  },
-  button: {
-    backgroundColor: primaryColor,
-    borderRadius: 10,
-  },
-  icon: {
-    paddingLeft: 2,
-    textAlign: 'center',
-  },
-});
 
 function AddButton({ onAddClick }: HeaderProps): JSX.Element {
   return (

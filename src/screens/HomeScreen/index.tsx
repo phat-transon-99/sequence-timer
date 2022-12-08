@@ -1,18 +1,11 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View } from 'react-native';
 import Timer from '../../models/Timer';
-import { primaryColor } from '../../styles/colors';
 import BottomCard from './components/BottomCard';
 import Header from './components/Header';
 import TimerCardList from './components/TimerCardList';
 import TopTimeDisplay from './components/TopTimeDisplay';
-
-const styles = StyleSheet.create({
-  screen: {
-    flex: 1,
-    backgroundColor: primaryColor,
-  },
-});
+import styles from './index.style';
 
 const items: Timer[] = [
   {

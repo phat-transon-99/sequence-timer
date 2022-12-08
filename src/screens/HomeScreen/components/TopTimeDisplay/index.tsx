@@ -1,15 +1,10 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View } from 'react-native';
+import styles from './index.style';
 
 type DisplayProps = {
   children?: React.ReactNode
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
 
 function TopTimeDisplay({ children }: DisplayProps): JSX.Element {
   return (

@@ -1,18 +1,12 @@
 import React from 'react';
-import { FlatList, StyleSheet } from 'react-native';
+import { FlatList } from 'react-native';
 import Timer from '../../../../models/Timer';
 import TimerCard from '../TimerCard';
+import styles from './index.style';
 
 type TimerCardListProps = {
   timers: Timer[]
 };
-
-const styles = StyleSheet.create({
-  list: {
-    marginTop: 25,
-    marginHorizontal: 30,
-  },
-});
 
 function TimerCardList({ timers }: TimerCardListProps): JSX.Element {
   return (
