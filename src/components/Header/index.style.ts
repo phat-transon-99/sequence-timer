@@ -1,9 +1,14 @@
 import { StyleSheet } from 'react-native';
-import { FONTFAMILY_BOLD, FONTSIZE_SMALL } from '../../styles/fonts';
+import { MARGIN_SMALL } from '../../styles/dims';
+import {
+  FONTFAMILY_SEMIBOLD, FONTSIZE_MEDIUM, FONTWEIGHT_SEMIBOLD,
+} from '../../styles/fonts';
 
 export default StyleSheet.create({
   header: {
-    fontFamily: FONTFAMILY_BOLD,
-    fontSize: FONTSIZE_SMALL,
+    fontFamily: FONTFAMILY_SEMIBOLD,
+    fontWeight: FONTWEIGHT_SEMIBOLD,
+    fontSize: FONTSIZE_MEDIUM,
+    marginBottom: MARGIN_SMALL,
   },
 });
