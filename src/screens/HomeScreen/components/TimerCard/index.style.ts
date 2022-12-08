@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native';
 import { FONTSIZE_MEDIUM, FONTSIZE_SMALL, FONTSIZE_XLARGE } from '../../../../styles/fonts';
 import { BLACK_COLOR, WHITE_COLOR } from '../../../../styles/colors';
 import {
-  BORDERRADIUS_ULARGE, BORDERRADIUS_XSMALL, PADDING_MEDIUM, PADDING_SMALL,
+  BORDERRADIUS_ULARGE, BORDERRADIUS_XSMALL, PADDING_MEDIUM, PADDING_SMALL, PADDING_XSMALL,
 } from '../../../../styles/dims';
 
 export default (color: string) => StyleSheet.create({
@@ -12,7 +12,8 @@ export default (color: string) => StyleSheet.create({
     backgroundColor: color,
     borderRadius: BORDERRADIUS_XSMALL,
     flexDirection: 'row',
-    padding: PADDING_SMALL,
+    padding: PADDING_XSMALL,
+    paddingLeft: PADDING_SMALL,
     marginBottom: 15,
     justifyContent: 'space-between',
     shadowColor: BLACK_COLOR,

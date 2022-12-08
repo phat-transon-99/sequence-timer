@@ -1,4 +1,5 @@
 // [] PADDING
+export const PADDING_XSMALL = 10;
 export const PADDING_SMALL = 20;
 export const PADDING_MEDIUM = 30;
 export const PADDING_LARGE = 40;

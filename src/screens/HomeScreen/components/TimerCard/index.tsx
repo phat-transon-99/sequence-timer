@@ -4,7 +4,7 @@ import {
 } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { CustomFontText, CustomFontTextBold } from '../../../../components/Text';
-import { whiteColor } from '../../../../styles/colors';
+import { WHITE_COLOR } from '../../../../styles/colors';
 import formatTimeStandard from '../../../../utils/time';
 import Timer from '../../../../models/Timer';
 import createStyle from './index.style';
@@ -38,7 +38,7 @@ function TimerCard({
       </View>
 
       <TouchableOpacity style={styles.playIcon} onPress={onStartPress}>
-        <FontAwesome5 name="play" size={24} color={whiteColor} />
+        <FontAwesome5 name="play" size={24} color={WHITE_COLOR} />
       </TouchableOpacity>
     </TouchableOpacity>
   );

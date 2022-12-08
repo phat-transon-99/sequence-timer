@@ -4,7 +4,7 @@ import {
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { CustomFontText } from '../../../../components/Text';
-import { whiteColor } from '../../../../styles/colors';
+import { WHITE_COLOR } from '../../../../styles/colors';
 import styles from './index.style';
 
 type HeaderProps = {
@@ -14,7 +14,7 @@ type HeaderProps = {
 function AddButton({ onAddClick }: HeaderProps): JSX.Element {
   return (
     <TouchableOpacity style={styles.button} onPress={onAddClick}>
-      <Ionicons name="add" size={36} color={whiteColor} style={styles.icon} />
+      <Ionicons name="add" size={36} color={WHITE_COLOR} style={styles.icon} />
     </TouchableOpacity>
   );
 }
