@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  FlatList, Modal, Text, TouchableOpacity, Animated,
+  FlatList, Modal, Text, TouchableOpacity, View,
 } from 'react-native';
 import { CustomFontText } from '../Text';
 import styles from './list.style';
@@ -33,7 +33,7 @@ function List({
   return (
     <Modal transparent visible={visible}>
       <TouchableOpacity style={styles.overlay} onPress={onDismiss} activeOpacity={1}>
-        <Animated.View style={styles.list}>
+        <View style={styles.list}>
           <FlatList
             data={items}
             renderItem={(entry) => (
@@ -44,7 +44,7 @@ function List({
               />
             )}
           />
-        </Animated.View>
+        </View>
       </TouchableOpacity>
     </Modal>
   );
