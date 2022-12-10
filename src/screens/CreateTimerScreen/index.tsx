@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react';
-import { View } from 'react-native';
+import { ScrollView, View } from 'react-native';
 import DefaultView from '../../components/DefaultView';
 import Header from '../../components/Header';
 import TextBox from '../../components/TextBox';
@@ -30,19 +30,27 @@ export default function CreateTimerScreen(): JSX.Element {
 
   return (
     <DefaultView color={WHITE_COLOR}>
-      <View style={styles.container}>
-        <Header>Select name</Header>
-        <TextBox placeholder="Enter time" />
+      <ScrollView style={styles.container}>
+        <View style={styles.spaced}>
+          <Header>Select name</Header>
+          <TextBox placeholder="Enter time" />
+        </View>
 
-        <Header>Select color</Header>
-        <ColorPicker />
+        <View style={styles.spaced}>
+          <Header>Select color</Header>
+          <ColorPicker />
+        </View>
 
-        <Header>Select alarm</Header>
-        <DropDown title="Choose alarm" items={items} onItemSelected={onItemSelected} />
+        <View style={styles.spaced}>
+          <Header>Select alarm</Header>
+          <DropDown title="Choose alarm" items={items} onItemSelected={onItemSelected} />
+        </View>
 
-        <Header>Select duration</Header>
-        <DurationPicker />
-      </View>
+        <View style={styles.spaced}>
+          <Header>Select duration</Header>
+          <DurationPicker />
+        </View>
+      </ScrollView>
     </DefaultView>
   );
 }
