@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
-import { GRAY_COLOR } from '../../styles/colors';
-import { BORDERRADIUS_XSMALL, PADDING_SMALL, PADDING_XSMALL } from '../../styles/dims';
-import { FONTSIZE_MEDIUM } from '../../styles/fonts';
+import { GRAY_COLOR } from '../../../styles/colors';
+import { BORDERRADIUS_XSMALL, PADDING_SMALL, PADDING_XSMALL } from '../../../styles/dims';
+import { FONTSIZE_SMALL } from '../../../styles/fonts';
 
 export default StyleSheet.create({
   container: {
@@ -17,8 +17,6 @@ export default StyleSheet.create({
   },
   text: {
     color: GRAY_COLOR,
-    fontSize: FONTSIZE_MEDIUM,
-  },
-  icon: {
+    fontSize: FONTSIZE_SMALL,
   },
 });
