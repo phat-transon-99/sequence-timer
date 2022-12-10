@@ -6,7 +6,7 @@ export default (color: string, isSelected: boolean) => StyleSheet.create({
   colorContainer: {
     borderColor: isSelected ? PRIMARY_COLOR : TRANSPARENT_COLOR,
     borderRadius: BORDERRADIUS_XSMALL,
-    borderStyle: 'dotted',
+    borderStyle: 'solid',
     borderWidth: 4,
     padding: PADDING_USMALL,
   },
