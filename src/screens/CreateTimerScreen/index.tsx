@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { View } from 'react-native';
 import DefaultView from '../../components/DefaultView';
 import Header from '../../components/Header';
@@ -7,21 +7,18 @@ import styles from './index.style';
 import { WHITE_COLOR } from '../../styles/colors';
 import ColorPicker from '../../components/ColorPicker';
 import DropDown from '../../components/Dropdown';
+import { DropdownItem } from '../../components/Dropdown/list';
 
-const items = [
-  'War Pigs',
-  "No man's land",
-  'War Pigs',
-  "No man's land",
-  'War Pigs',
-  "No man's land",
-  'War Pigs',
-  "No man's land",
-  'War Pigs',
-  "No man's land",
+const items: DropdownItem[] = [
+  {
+    title: 'War Pig',
+    value: 'war_pig',
+  },
 ];
 
 export default function CreateTimerScreen(): JSX.Element {
+  const onItemSelected = useCallback(() => {}, []);
+
   return (
     <DefaultView color={WHITE_COLOR}>
       <View style={styles.container}>
@@ -32,7 +29,7 @@ export default function CreateTimerScreen(): JSX.Element {
         <ColorPicker />
 
         <Header>Select alarm</Header>
-        <DropDown title="Choose alarm" items={items} />
+        <DropDown title="Choose alarm" items={items} onItemSelected={onItemSelected} />
       </View>
     </DefaultView>
   );
