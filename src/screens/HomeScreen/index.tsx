@@ -1,6 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
-import DefaultView from '../../components/DefaultView';
+import DefaultView from '../../components/SafeAreaView';
 import Timer from '../../models/Timer';
 import BottomCard from './components/BottomCard';
 import Header from './components/Header';

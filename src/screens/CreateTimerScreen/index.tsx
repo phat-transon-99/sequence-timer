@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 import { ScrollView, View, Text } from 'react-native';
-import DefaultView from '../../components/DefaultView';
+import DefaultView from '../../components/SafeAreaView';
 import Header from '../../components/Header';
 import TextBox from '../../components/TextBox';
 import styles from './index.style';
