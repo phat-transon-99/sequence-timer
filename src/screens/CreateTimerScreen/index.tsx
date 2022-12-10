@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react';
-import { ScrollView, View } from 'react-native';
+import { ScrollView, View, Text } from 'react-native';
 import DefaultView from '../../components/DefaultView';
 import Header from '../../components/Header';
 import TextBox from '../../components/TextBox';
@@ -9,6 +9,8 @@ import ColorPicker from '../../components/ColorPicker';
 import DropDown from '../../components/Dropdown/NativeDropdown';
 import { DropdownItem } from '../../components/Dropdown/props';
 import DurationPicker from '../../components/DurationPicker';
+import CustomButton from '../../components/Button';
+import { CustomFontText } from '../../components/Text';
 
 const items: DropdownItem[] = [
   {
@@ -30,25 +32,36 @@ export default function CreateTimerScreen(): JSX.Element {
 
   return (
     <DefaultView color={WHITE_COLOR}>
-      <ScrollView style={styles.container}>
-        <View style={styles.spaced}>
-          <Header>Select name</Header>
-          <TextBox placeholder="Enter time" />
+      <ScrollView>
+        <View style={styles.title}>
+          <CustomFontText>
+            <Text style={styles.titleText}>Create timer</Text>
+          </CustomFontText>
         </View>
+        <View style={styles.container}>
+          <View style={styles.spaced}>
+            <Header>Select name</Header>
+            <TextBox placeholder="Enter time" />
+          </View>
 
-        <View style={styles.spaced}>
-          <Header>Select color</Header>
-          <ColorPicker />
-        </View>
+          <View style={styles.spaced}>
+            <Header>Select color</Header>
+            <ColorPicker />
+          </View>
 
-        <View style={styles.spaced}>
-          <Header>Select alarm</Header>
-          <DropDown title="Choose alarm" items={items} onItemSelected={onItemSelected} />
-        </View>
+          <View style={styles.spaced}>
+            <Header>Select alarm</Header>
+            <DropDown title="Choose alarm" items={items} onItemSelected={onItemSelected} />
+          </View>
 
-        <View style={styles.spaced}>
-          <Header>Select duration</Header>
-          <DurationPicker />
+          <View style={styles.spaced}>
+            <Header>Select duration</Header>
+            <DurationPicker />
+          </View>
+
+          <View style={styles.spaced}>
+            <CustomButton text="Create timer" type="primary" onPress={() => {}} />
+          </View>
         </View>
       </ScrollView>
     </DefaultView>
