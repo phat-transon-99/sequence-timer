@@ -5,15 +5,20 @@ import {
 import { CustomFontText } from '../Text';
 import styles from './list.style';
 
+export type DropdownItem = {
+  title: string,
+  value: string
+};
+
 type ListProps = {
   visible: boolean,
-  items: string[],
-  onPress: (item: string) => void
+  items: DropdownItem[],
+  onPress: (item: DropdownItem) => void
   onDismiss: () => void
 };
 
 type ListItemProps = {
-  item: string,
+  item: DropdownItem,
   onPress: () => void;
 };
 
@@ -21,7 +26,7 @@ function ListItem({ item, onPress }: ListItemProps): JSX.Element {
   return (
     <TouchableOpacity style={styles.listItem} onPress={onPress}>
       <CustomFontText>
-        <Text style={styles.listItemText}>{ item }</Text>
+        <Text style={styles.listItemText}>{ item.title }</Text>
       </CustomFontText>
     </TouchableOpacity>
   );
@@ -39,10 +44,10 @@ function List({
             renderItem={(entry) => (
               <ListItem
                 item={entry.item}
-                key={entry.item}
                 onPress={() => onPress(entry.item)}
               />
             )}
+            keyExtractor={(item) => item.value}
           />
         </View>
       </TouchableOpacity>
