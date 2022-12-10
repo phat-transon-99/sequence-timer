@@ -1,21 +1,23 @@
 import React, { useState, useCallback } from 'react';
 import { View } from 'react-native';
-import List from './list';
+import List, { DropdownItem } from './list';
 import Selector from './selector';
 
 type Props = {
   title: string,
-  items: string[],
+  items: DropdownItem[],
+  onItemSelected: (item: DropdownItem) => void
 };
 
-function DropDown({ title, items }: Props): JSX.Element {
+function DropDown({ title, items, onItemSelected }: Props): JSX.Element {
   // Show text
   const [text, setText] = useState(title);
   const [isListVisible, setListVisibile] = useState(true);
 
   // On list item selected
-  const onListItemSelected = useCallback((item: string) => {
-    setText(item);
+  const onListItemSelected = useCallback((item: DropdownItem) => {
+    onItemSelected(item);
+    setText(item.title);
     setListVisibile(false);
   }, []);
 

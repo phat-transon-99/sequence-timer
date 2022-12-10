@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { GRAY_COLOR, WHITE_COLOR } from '../../styles/colors';
+import { GRAY_COLOR, TRANSPARENT_BLACK, WHITE_COLOR } from '../../styles/colors';
 import {
   BORDERRADIUS_SMALL, PADDING_MEDIUM, PADDING_SMALL, PADDING_XSMALL,
 } from '../../styles/dims';
@@ -25,7 +25,7 @@ export default StyleSheet.create({
   },
   overlay: {
     alignItems: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    backgroundColor: TRANSPARENT_BLACK,
     flex: 1,
     justifyContent: 'center',
   },
