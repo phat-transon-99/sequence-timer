@@ -1,16 +1,16 @@
 import React from 'react';
 import { TouchableOpacity, Text } from 'react-native';
 import { CustomFontText } from '../Text';
-import createStyle, { ButtonType } from './index.style';
+import createStyle from './index.style';
 
-type Props = {
+export type Props = {
   text: string,
-  type: ButtonType,
+  color: string,
   onPress: () => void
 };
 
-export default function CustomButton({ text, type, onPress }: Props): JSX.Element {
-  const styles = createStyle(type);
+export default function CustomButton({ text, color, onPress }: Props): JSX.Element {
+  const styles = createStyle(color);
 
   return (
     <TouchableOpacity style={styles.container} onPress={onPress} activeOpacity={0.4}>
