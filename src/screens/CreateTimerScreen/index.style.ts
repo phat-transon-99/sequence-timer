@@ -15,6 +15,9 @@ export default StyleSheet.create({
   spaced: {
     marginBottom: MARGIN_MEDIUM,
   },
+  buttonSpaced: {
+    marginBottom: MARGIN_SMALL,
+  },
   title: {
     alignItems: 'center',
     justifyContent: 'center',
