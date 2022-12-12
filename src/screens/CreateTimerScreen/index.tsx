@@ -9,7 +9,7 @@ import ColorPicker from '../../components/ColorPicker';
 import DropDown from '../../components/Dropdown/NativeDropdown';
 import { DropdownItem } from '../../components/Dropdown/props';
 import DurationPicker from '../../components/DurationPicker';
-import CustomButton from '../../components/Button';
+import CustomButton from '../../components/CustomButton';
 import { CustomFontText } from '../../components/Text';
 
 const items: DropdownItem[] = [
