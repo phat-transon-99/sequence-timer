@@ -8,8 +8,10 @@ const initialState: ReduxModel<Timer[]> = {
   body: [],
 };
 
-export default createSlice({
+export const manageTimerSlice = createSlice({
   name: 'timers',
   initialState,
   reducers: {},
 });
+
+export default manageTimerSlice.reducer;
