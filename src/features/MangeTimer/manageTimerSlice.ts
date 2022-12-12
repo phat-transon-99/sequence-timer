@@ -1,12 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import ReduxModel from '../../models/ReduxModel';
-
-export interface Timer {
-  id: number,
-  name: string,
-  color: string,
-  duration: number,
-}
+import Timer from '../../models/Timer';
 
 const initialState: ReduxModel<Timer[]> = {
   loading: false,
@@ -14,7 +8,7 @@ const initialState: ReduxModel<Timer[]> = {
   body: [],
 };
 
-export const manageTimerSlice = createSlice({
+export default createSlice({
   name: 'timers',
   initialState,
   reducers: {},
