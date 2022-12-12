@@ -15,14 +15,14 @@ export type TimerCardProps = Timer & {
 };
 
 function TimerCard({
-  name, icon, color, timeInSeconds, onPress, onStartPress,
+  name, color, duration, onPress, onStartPress,
 }: TimerCardProps): JSX.Element {
   const styles = createStyle(color);
 
   return (
     <TouchableOpacity style={styles.container} activeOpacity={0.8} onPress={onPress}>
       <View style={styles.leftContainer}>
-        <Text style={styles.timerIcon}>{ icon }</Text>
+        <Text style={styles.timerIcon}>⏰</Text>
 
         <View style={styles.textContainer}>
           <View style={{ marginBottom: 5 }}>
@@ -32,7 +32,7 @@ function TimerCard({
           </View>
 
           <CustomFontText>
-            <Text style={styles.timeText}>{ formatTimeStandard(timeInSeconds) }</Text>
+            <Text style={styles.timeText}>{ formatTimeStandard(duration) }</Text>
           </CustomFontText>
         </View>
       </View>

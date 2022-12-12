@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 import { PRIMARY_COLOR } from '../../../../styles/colors';
 import {
-  BORDERRADIUS_SMALL, MARGIN_LARGE, MARGIN_MEDIUM,
+  BORDERRADIUS_SMALL, MARGIN_LARGE, MARGIN_MEDIUM, MARGIN_XLARGE,
 } from '../../../../styles/dims';
 import { FONTSIZE_LARGE } from '../../../../styles/fonts';
 
@@ -10,8 +10,8 @@ export default StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginHorizontal: MARGIN_LARGE,
-    marginTop: MARGIN_LARGE,
-    marginBottom: MARGIN_MEDIUM,
+    marginTop: MARGIN_MEDIUM,
+    marginBottom: MARGIN_XLARGE,
   },
   text: {
     fontSize: FONTSIZE_LARGE,

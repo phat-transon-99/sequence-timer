@@ -9,6 +9,7 @@ export const PADDING_LARGE = 40;
 export const MARGIN_SMALL = 10;
 export const MARGIN_MEDIUM = 20;
 export const MARGIN_LARGE = 30;
+export const MARGIN_XLARGE = 40;
 
 // [] BORDER RADIUS
 export const BORDERRADIUS_XSMALL = 15;

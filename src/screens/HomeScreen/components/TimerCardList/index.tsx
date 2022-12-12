@@ -17,9 +17,8 @@ function TimerCardList({ timers }: TimerCardListProps): JSX.Element {
         <TimerCard
           id={entry.item.id}
           name={entry.item.name}
-          icon={entry.item.icon}
           color={entry.item.color}
-          timeInSeconds={entry.item.timeInSeconds}
+          duration={entry.item.duration}
         />
       )}
       contentContainerStyle={styles.list}
