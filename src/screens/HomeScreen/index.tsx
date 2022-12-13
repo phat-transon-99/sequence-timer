@@ -1,13 +1,13 @@
 import React from 'react';
 import { View } from 'react-native';
 import DefaultView from '../../components/SafeAreaView';
-import Header from './components/Header';
 import TimerCardList from './components/TimerCardList';
 import TopTimeDisplay from './components/TopTimeDisplay';
 import styles from './index.style';
 import { PRIMARY_COLOR } from '../../styles/colors';
 import CustomBottomSheet from '../../components/CustomBottomSheet';
 import TIMERS from '../../constants/timers';
+import SmartHeader from './components/SmartHeader';
 
 function HomeScreen(): JSX.Element {
   return (
@@ -15,7 +15,7 @@ function HomeScreen(): JSX.Element {
       <View style={styles.screen}>
         <TopTimeDisplay />
         <CustomBottomSheet>
-          <Header onAddClick={() => {}} />
+          <SmartHeader />
           <TimerCardList timers={TIMERS} />
         </CustomBottomSheet>
       </View>
