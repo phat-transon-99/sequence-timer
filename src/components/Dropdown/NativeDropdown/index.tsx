@@ -3,17 +3,12 @@ import { Picker } from '@react-native-picker/picker';
 import { View } from 'react-native';
 import { Props } from '../props';
 
-type Item = {
-  itemValue: string,
-  itemPosition: number
-};
-
 export default function NativeDropdown({ items, onItemSelected }: Props): JSX.Element {
-  const [selected, setSelected] = useState<Item>();
+  const [selected, setSelected] = useState<string>();
 
-  const onChosen = useCallback((item: Item) => {
+  const onChosen = useCallback((item: string) => {
     setSelected(item);
-    onItemSelected(items[item.itemPosition]);
+    onItemSelected(items.find((entry) => entry.value === item));
   }, [items]);
 
   return (

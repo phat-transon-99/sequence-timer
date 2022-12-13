@@ -4,12 +4,19 @@ import styles from './index.style';
 import colors from '../../constants/colors';
 import ColorBlock, { ColorType } from './colorblock';
 
-export default function ColorPicker(): JSX.Element {
+type Props = {
+  onColorChosen: (color: ColorType) => void
+};
+
+export default function ColorPicker({ onColorChosen }: Props): JSX.Element {
   // Set selected color and highlight
   const [selectedColor, setSelectedColor] = useState<ColorType>('#F77F00');
 
   // On press -> Set selected color
-  const onPress = useCallback((color: ColorType) => setSelectedColor(color), []);
+  const onPress = useCallback((color: ColorType) => {
+    setSelectedColor(color);
+    onColorChosen(color);
+  }, []);
 
   return (
     <View style={styles.colorPicker}>

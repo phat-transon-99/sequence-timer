@@ -9,12 +9,12 @@ type Props = {
 };
 
 export default function TextBox({ placeholder, onChangeText }: Props): JSX.Element {
-  const [text, setText] = useState<string>();
+  const [text, setText] = useState<string>('');
 
   const onChangeTextHandler = useCallback((textValue: string) => {
     setText(textValue);
     onChangeText?.(textValue);
-  }, []);
+  }, [text]);
 
   return (
     <TextInput

@@ -6,5 +6,5 @@ export type DropdownItem = {
 export type Props = {
   title: string,
   items: DropdownItem[],
-  onItemSelected: (item: DropdownItem) => void
+  onItemSelected: (item?: DropdownItem) => void
 };

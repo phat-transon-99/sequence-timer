@@ -5,7 +5,7 @@ function prependZero(num: number): string {
   return `${num}`;
 }
 
-export default function formatTimeStandard(timeInSeconds: number): string {
+export function formatTimeStandard(timeInSeconds: number): string {
   // Get the hours
   const hours = Math.floor(timeInSeconds / 3600);
 
@@ -17,4 +17,19 @@ export default function formatTimeStandard(timeInSeconds: number): string {
 
   // Format the time and return
   return hours > 0 ? `${prependZero(hours)}:${prependZero(minutes)}:${prependZero(seconds)}` : `${prependZero(minutes)}:${prependZero(seconds)}`;
+}
+
+export function extractTime(timeValue: string): number {
+  // Create regrex expression
+  const expression = /[0-9]+/i;
+  const matches = timeValue.match(expression);
+
+  if (matches) {
+    return Number.parseInt(matches[0], 10);
+  }
+  throw new Error('Invalid form');
+}
+
+export function convertToSeconds(minutes: number, seconds: number): number {
+  return minutes * 60 + seconds;
 }

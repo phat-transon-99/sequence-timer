@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useRef } from 'react';
 import { ScrollView, View, Text } from 'react-native';
 import { useNavigation, NavigationProp, ParamListBase } from '@react-navigation/native';
 import DefaultView from '../../components/SafeAreaView';
@@ -11,12 +11,40 @@ import DurationPicker from '../../components/DurationPicker';
 import { CustomFontText } from '../../components/Text';
 import PrimaryButton from './components/PrimaryButton';
 import DangerButton from './components/DangerButton';
+import { ColorType } from '../../components/ColorPicker/colorblock';
 
 export default function CreateTimerScreen(): JSX.Element {
+  // Navigation
   const navigation = useNavigation<NavigationProp<ParamListBase>>();
 
+  // State
+  const name = useRef('');
+  const color = useRef('#F77F00');
+  const duration = useRef(0);
+
+  // Events
   const cancel = useCallback(() => {
     if (navigation.canGoBack()) { navigation.goBack(); }
+  }, []);
+
+  const onNameChosen = useCallback((timerName: string) => {
+    // eslint-disable-next-line no-console
+    name.current = timerName;
+  }, []);
+
+  const onColorChosen = useCallback((timerColor: ColorType) => {
+    // eslint-disable-next-line no-console
+    color.current = timerColor;
+  }, []);
+
+  const onDurationChosen = useCallback((timerDuration: number) => {
+    // eslint-disable-next-line no-console
+    duration.current = timerDuration;
+  }, []);
+
+  const onCreateChosen = useCallback(() => {
+    // eslint-disable-next-line no-console
+    console.log(name.current, color.current, duration.current);
   }, []);
 
   return (
@@ -30,21 +58,21 @@ export default function CreateTimerScreen(): JSX.Element {
         <View style={styles.container}>
           <View style={styles.spaced}>
             <Header>Select name</Header>
-            <TextBox placeholder="Enter time" />
+            <TextBox placeholder="Enter time" onChangeText={onNameChosen} />
           </View>
 
           <View style={styles.spaced}>
             <Header>Select color</Header>
-            <ColorPicker />
+            <ColorPicker onColorChosen={onColorChosen} />
           </View>
 
           <View style={styles.spaced}>
             <Header>Select duration</Header>
-            <DurationPicker />
+            <DurationPicker onDurationChosen={onDurationChosen} />
           </View>
 
           <View style={styles.buttonSpaced}>
-            <PrimaryButton title="Create timer" onPress={() => {}} />
+            <PrimaryButton title="Create timer" onPress={onCreateChosen} />
           </View>
 
           <View style={styles.spaced}>

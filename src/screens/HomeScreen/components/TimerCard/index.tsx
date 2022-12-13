@@ -5,7 +5,7 @@ import {
 import { FontAwesome5 } from '@expo/vector-icons';
 import { CustomFontText, CustomFontTextBold } from '../../../../components/Text';
 import { WHITE_COLOR } from '../../../../styles/colors';
-import formatTimeStandard from '../../../../utils/time';
+import { formatTimeStandard } from '../../../../utils/time';
 import Timer from '../../../../models/Timer';
 import createStyle from './index.style';
 
