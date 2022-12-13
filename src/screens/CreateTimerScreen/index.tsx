@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { ScrollView, View, Text } from 'react-native';
+import { useNavigation, NavigationProp, ParamListBase } from '@react-navigation/native';
 import DefaultView from '../../components/SafeAreaView';
 import Header from '../../components/Header';
 import TextBox from '../../components/TextBox';
@@ -12,6 +13,12 @@ import PrimaryButton from './components/PrimaryButton';
 import DangerButton from './components/DangerButton';
 
 export default function CreateTimerScreen(): JSX.Element {
+  const navigation = useNavigation<NavigationProp<ParamListBase>>();
+
+  const cancel = useCallback(() => {
+    if (navigation.canGoBack()) { navigation.goBack(); }
+  }, []);
+
   return (
     <DefaultView color={WHITE_COLOR}>
       <ScrollView>
@@ -41,7 +48,7 @@ export default function CreateTimerScreen(): JSX.Element {
           </View>
 
           <View style={styles.spaced}>
-            <DangerButton title="Cancel" onPress={() => {}} />
+            <DangerButton title="Cancel" onPress={cancel} />
           </View>
         </View>
       </ScrollView>
