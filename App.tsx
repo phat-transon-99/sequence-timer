@@ -7,13 +7,17 @@ import useLoadFont from './src/hooks/fonts';
 import HomeScreen from './src/screens/HomeScreen';
 import CreateTimerScreen from './src/screens/CreateTimerScreen';
 import store from './src/store';
+import useDatabase from './src/hooks/database';
 
 // Create stack navigation
 const Stack = createNativeStackNavigator();
 
 export default function App() {
-  // @ts-ignore Disable ts error on this line
-  const isAppReady = useCombineBooleanHooks(useLoadFont);
+  const isAppReady = useCombineBooleanHooks(
+    // @ts-ignore Disable ts error on this line
+    useLoadFont,
+    useDatabase,
+  );
 
   return (
     isAppReady
