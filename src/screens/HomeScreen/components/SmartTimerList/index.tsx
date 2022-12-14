@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text } from 'react-native';
-import selectTimers from '../../../../features/MangeTimer/selector';
+import { selectTimers } from '../../../../features/MangeTimer/selector';
 import { useAppSelector } from '../../../../hooks/redux';
 import TimerCardList from '../TimerCardList';
 import Timer from '../../../../models/Timer';
