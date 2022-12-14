@@ -12,10 +12,15 @@ import { CustomFontText } from '../../components/Text';
 import PrimaryButton from './components/PrimaryButton';
 import DangerButton from './components/DangerButton';
 import { ColorType } from '../../components/ColorPicker/colorblock';
+import { useAppDispatch } from '../../hooks/redux';
+import { createNewTimer } from '../../features/MangeTimer/thunk';
 
 export default function CreateTimerScreen(): JSX.Element {
   // Navigation
   const navigation = useNavigation<NavigationProp<ParamListBase>>();
+
+  // Dispatch
+  const dispatch = useAppDispatch();
 
   // State
   const name = useRef('');
@@ -44,7 +49,14 @@ export default function CreateTimerScreen(): JSX.Element {
 
   const onCreateChosen = useCallback(() => {
     // eslint-disable-next-line no-console
-    console.log(name.current, color.current, duration.current);
+    dispatch(
+      createNewTimer({
+        id: 0,
+        name: name.current,
+        color: color.current,
+        duration: duration.current,
+      }),
+    );
   }, []);
 
   return (
