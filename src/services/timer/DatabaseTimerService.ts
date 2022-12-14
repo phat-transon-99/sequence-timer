@@ -12,13 +12,34 @@ class DatabaseTimerService implements TimerService {
     this.database = SQLite.openDatabase(DatabaseTimerService.DATABASE_NAME);
   }
 
+  dropDatabase(
+    successCallback: () => void,
+    errorCallback: (error: SQLite.SQLError | Error) => void,
+  ): void {
+    this.database.transaction((transaction) => {
+      transaction.executeSql(
+        'DROP TABLE timers',
+        [],
+        () => {
+          successCallback();
+        },
+        (_, error) => {
+          errorCallback(error);
+          return true;
+        },
+      );
+    }, () => {
+      errorCallback(new Error('Can not delete database'));
+    });
+  }
+
   createDatabase(
     successCallback: () => void,
     errorCallback: (error: SQLite.SQLError | Error) => void,
   ): void {
     this.database.transaction((transaction) => {
       transaction.executeSql(
-        'CREATE TABLE IF NOT EXISTS timers (id INTEGER PRIMARY KEY NOT NULL, name VARCHAR(255), color VARCHAR(20), duration BIGINT)',
+        'CREATE TABLE IF NOT EXISTS timers (_id INTEGER PRIMARY KEY AUTOINCREMENT, name VARCHAR(255), color VARCHAR(20), duration BIGINT)',
         [],
         () => {
           successCallback();
@@ -37,20 +58,26 @@ class DatabaseTimerService implements TimerService {
     return new Promise((resolve) => {
       this.database.transaction((transaction) => {
         transaction.executeSql(
-          'SELECT * FROM timer',
+          'SELECT * FROM timers',
           [],
           // eslint-disable-next-line @typescript-eslint/no-unused-vars
           (_, { rows: { _array } }) => {
             resolve({
-              body: _array,
+              body: _array.map((item) => ({
+                // eslint-disable-next-line no-underscore-dangle
+                id: item._id,
+                name: item.name,
+                color: item.color,
+                duration: item.duration,
+              })),
               error: false,
             });
           },
           // eslint-disable-next-line @typescript-eslint/no-unused-vars
-          () => {
+          (_, e) => {
             resolve({
               body: undefined,
-              error: 'Can not select from database',
+              error: e.message,
             });
             return false;
           },
@@ -68,7 +95,7 @@ class DatabaseTimerService implements TimerService {
     return new Promise((resolve) => {
       this.database.transaction((transaction) => {
         transaction.executeSql(
-          'INSERT INTO timers VALUES (?, ?, ?)',
+          'INSERT INTO timers (name, color, duration) VALUES (?, ?, ?)',
           [timer.name, timer.color, timer.duration],
           // eslint-disable-next-line @typescript-eslint/no-unused-vars
           () => {
@@ -78,10 +105,10 @@ class DatabaseTimerService implements TimerService {
             });
           },
           // eslint-disable-next-line @typescript-eslint/no-unused-vars
-          () => {
+          (_, e) => {
             resolve({
               body: undefined,
-              error: 'Can not insert to database',
+              error: e.message,
             });
             return false;
           },
