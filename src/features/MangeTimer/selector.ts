@@ -1,5 +1,5 @@
 import { RootState } from '../../store';
 
-const selectTimers = (state: RootState) => state.timers;
+export const selectTimers = (state: RootState) => state.timers;
 
-export default selectTimers;
+export const selectTimerList = (state: RootState) => state.timers.body || [];
