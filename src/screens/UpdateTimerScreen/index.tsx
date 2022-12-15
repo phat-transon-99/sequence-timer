@@ -12,6 +12,7 @@ import { CustomFontText } from '../../components/Text';
 import PrimaryButton from './components/PrimaryButton';
 import DangerButton from './components/DangerButton';
 import { ColorType } from '../../components/ColorPicker/colorblock';
+import NeuralButton from './components/NeuralButtom';
 
 export default function UpdateTimerScreen(): JSX.Element {
   // Navigation
@@ -23,10 +24,6 @@ export default function UpdateTimerScreen(): JSX.Element {
   const duration = useRef(0);
 
   // Events
-  const cancel = useCallback(() => {
-    if (navigation.canGoBack()) { navigation.goBack(); }
-  }, []);
-
   const onNameChosen = useCallback((timerName: string) => {
     // eslint-disable-next-line no-console
     name.current = timerName;
@@ -42,7 +39,7 @@ export default function UpdateTimerScreen(): JSX.Element {
     duration.current = timerDuration;
   }, []);
 
-  const onCreateChosen = useCallback(() => {
+  const onGoBackChosen = useCallback(() => {
     // After creating a timer -> Go back
     navigation.goBack();
   }, []);
@@ -72,11 +69,15 @@ export default function UpdateTimerScreen(): JSX.Element {
           </View>
 
           <View style={styles.buttonSpaced}>
-            <PrimaryButton title="Create timer" onPress={onCreateChosen} />
+            <PrimaryButton title="Update timer" onPress={() => {}} />
+          </View>
+
+          <View style={styles.buttonSpaced}>
+            <DangerButton title="Delete timer" onPress={() => {}} />
           </View>
 
           <View style={styles.spaced}>
-            <DangerButton title="Delete" onPress={cancel} />
+            <NeuralButton title="Go back" onPress={onGoBackChosen} />
           </View>
         </View>
       </ScrollView>
