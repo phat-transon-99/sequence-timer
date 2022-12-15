@@ -4,12 +4,13 @@ import styles from './index.style';
 import { GRAY_COLOR } from '../../styles/colors';
 
 type Props = {
+  value?: string,
   placeholder?: string,
   onChangeText?: (text: string) => void
 };
 
-export default function TextBox({ placeholder, onChangeText }: Props): JSX.Element {
-  const [text, setText] = useState<string>('');
+export default function TextBox({ value, placeholder, onChangeText }: Props): JSX.Element {
+  const [text, setText] = useState<string>(value || '');
 
   const onChangeTextHandler = useCallback((textValue: string) => {
     setText(textValue);

@@ -59,7 +59,7 @@ export default function UpdateTimerScreen(): JSX.Element {
         <View style={styles.container}>
           <View style={styles.spaced}>
             <Header>Select name</Header>
-            <TextBox placeholder="Enter time" onChangeText={onNameChosen} />
+            <TextBox value={name.current} placeholder="Enter time" onChangeText={onNameChosen} />
           </View>
 
           <View style={styles.spaced}>
