@@ -57,6 +57,9 @@ export default function CreateTimerScreen(): JSX.Element {
         duration: duration.current,
       }),
     );
+
+    // After creating a timer -> Go back
+    navigation.goBack();
   }, []);
 
   return (
