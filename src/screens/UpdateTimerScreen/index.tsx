@@ -64,7 +64,7 @@ export default function UpdateTimerScreen(): JSX.Element {
 
           <View style={styles.spaced}>
             <Header>Select color</Header>
-            <ColorPicker onColorChosen={onColorChosen} />
+            <ColorPicker onColorChosen={onColorChosen} value={timer.color as ColorType} />
           </View>
 
           <View style={styles.spaced}>
