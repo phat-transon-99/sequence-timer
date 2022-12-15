@@ -6,8 +6,10 @@ import useCombineBooleanHooks from './src/hooks/combine';
 import useLoadFont from './src/hooks/fonts';
 import HomeScreen from './src/screens/HomeScreen';
 import CreateTimerScreen from './src/screens/CreateTimerScreen';
+import UpdateTimerScreen from './src/screens/UpdateTimerScreen';
 import useDatabase from './src/hooks/database';
 import { store } from './src/store';
+import { CREATE_TIMER_SCREEN, HOME_SCREEN, UPDATE_TIMER_SCREEN } from './src/constants/navigation.screen';
 
 // Create stack navigation
 const Stack = createNativeStackNavigator();
@@ -25,8 +27,9 @@ export default function App() {
         <Provider store={store}>
           <NavigationContainer>
             <Stack.Navigator screenOptions={{ headerShown: false }}>
-              <Stack.Screen name="Home" component={HomeScreen} />
-              <Stack.Screen name="CreateTimer" component={CreateTimerScreen} />
+              <Stack.Screen name={HOME_SCREEN} component={HomeScreen} />
+              <Stack.Screen name={CREATE_TIMER_SCREEN} component={CreateTimerScreen} />
+              <Stack.Screen name={UPDATE_TIMER_SCREEN} component={UpdateTimerScreen} />
             </Stack.Navigator>
           </NavigationContainer>
         </Provider>
