@@ -8,11 +8,13 @@ export default function SmartTimerCard({
   id, name, color, duration,
 }: Timer): JSX.Element {
   // Navigation
-  const navigation = useNavigation<NavigationProp<ParamListBase>>();
+  const navigation = useNavigation<NavigationProp<ParamListBase & Timer>>();
 
   // On card pressed
   const onCardPressed = useCallback(() => {
-    navigation.navigate(UPDATE_TIMER_SCREEN);
+    navigation.navigate(UPDATE_TIMER_SCREEN, {
+      id, name, color, duration,
+    });
   }, []);
 
   return (

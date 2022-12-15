@@ -1,6 +1,8 @@
 import React, { useCallback, useRef } from 'react';
 import { ScrollView, View, Text } from 'react-native';
-import { useNavigation, NavigationProp, ParamListBase } from '@react-navigation/native';
+import {
+  useNavigation, NavigationProp, ParamListBase, useRoute,
+} from '@react-navigation/native';
 import DefaultView from '../../components/SafeAreaView';
 import Header from '../../components/Header';
 import TextBox from '../../components/TextBox';
@@ -13,15 +15,17 @@ import PrimaryButton from './components/PrimaryButton';
 import DangerButton from './components/DangerButton';
 import { ColorType } from '../../components/ColorPicker/colorblock';
 import NeuralButton from './components/NeuralButtom';
+import Timer from '../../models/Timer';
 
 export default function UpdateTimerScreen(): JSX.Element {
   // Navigation
   const navigation = useNavigation<NavigationProp<ParamListBase>>();
+  const { params: timer } = useRoute() as { params: Timer };
 
   // State
-  const name = useRef('');
-  const color = useRef('#F77F00');
-  const duration = useRef(0);
+  const name = useRef(timer.name);
+  const color = useRef(timer.color);
+  const duration = useRef(timer.duration);
 
   // Events
   const onNameChosen = useCallback((timerName: string) => {
