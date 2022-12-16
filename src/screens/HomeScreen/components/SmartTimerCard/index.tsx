@@ -15,7 +15,7 @@ export default function SmartTimerCard({
     navigation.navigate(UPDATE_TIMER_SCREEN, {
       id, name, color, duration,
     });
-  }, []);
+  }, [id, name, color, duration]);
 
   return (
     <TimerCard

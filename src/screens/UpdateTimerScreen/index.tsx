@@ -24,6 +24,8 @@ export default function UpdateTimerScreen(): JSX.Element {
   const navigation = useNavigation<NavigationProp<ParamListBase>>();
   const { params: timer } = useRoute() as { params: Timer };
 
+  console.log(timer);
+
   // Dispatch delete timer and update timer
   const dispatch = useAppDispatch();
 
