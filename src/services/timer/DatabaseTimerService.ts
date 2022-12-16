@@ -121,6 +121,37 @@ class DatabaseTimerService implements TimerService {
       });
     });
   }
+
+  deleteTimer(id: number): Promise<ServiceModel<number>> {
+    return new Promise((resolve) => {
+      this.database.transaction((transaction) => {
+        transaction.executeSql(
+          'DELETE FROM timers WHERE _id = ?',
+          [id],
+          // eslint-disable-next-line @typescript-eslint/no-unused-vars
+          () => {
+            resolve({
+              body: id,
+              error: false,
+            });
+          },
+          // eslint-disable-next-line @typescript-eslint/no-unused-vars
+          (_, e) => {
+            resolve({
+              body: undefined,
+              error: e.message,
+            });
+            return false;
+          },
+        );
+      }, () => {
+        resolve({
+          body: undefined,
+          error: 'Can not perform transaction',
+        });
+      });
+    });
+  }
 }
 
 export default new DatabaseTimerService();

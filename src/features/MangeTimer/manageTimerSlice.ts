@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import ReduxModel from '../../models/ReduxModel';
 import Timer from '../../models/Timer';
-import { createNewTimer, fetchAllTimers } from './thunk';
+import { createNewTimer, deleteTimer, fetchAllTimers } from './thunk';
 
 const initialState: ReduxModel<Timer[]> = {
   loading: false,
@@ -44,6 +44,17 @@ export const manageTimerSlice = createSlice({
       // On success -> Push to timer list
       if (action.payload.body) {
         state.body?.push(action.payload.body);
+      }
+    });
+
+    // Add cases for deleting a timer
+    builder.addCase(deleteTimer.pending, () => {
+      // Handle deleting timer
+    });
+
+    builder.addCase(deleteTimer.fulfilled, (state, action) => {
+      if (!action.payload.error) {
+        state.body = state.body?.filter((item) => item.id !== action.payload.body);
       }
     });
   },

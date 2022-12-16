@@ -16,11 +16,16 @@ import DangerButton from './components/DangerButton';
 import { ColorType } from '../../components/ColorPicker/colorblock';
 import NeuralButton from './components/NeuralButtom';
 import Timer from '../../models/Timer';
+import { useAppDispatch } from '../../hooks/redux';
+import { deleteTimer } from '../../features/MangeTimer/thunk';
 
 export default function UpdateTimerScreen(): JSX.Element {
   // Navigation
   const navigation = useNavigation<NavigationProp<ParamListBase>>();
   const { params: timer } = useRoute() as { params: Timer };
+
+  // Dispatch delete timer and update timer
+  const dispatch = useAppDispatch();
 
   // State
   const name = useRef(timer.name);
@@ -45,6 +50,11 @@ export default function UpdateTimerScreen(): JSX.Element {
 
   const onGoBackChosen = useCallback(() => {
     // After creating a timer -> Go back
+    navigation.goBack();
+  }, []);
+
+  const onDeleteTimer = useCallback(() => {
+    dispatch(deleteTimer(timer.id));
     navigation.goBack();
   }, []);
 
@@ -77,7 +87,7 @@ export default function UpdateTimerScreen(): JSX.Element {
           </View>
 
           <View style={styles.buttonSpaced}>
-            <DangerButton title="Delete timer" onPress={() => {}} />
+            <DangerButton title="Delete timer" onPress={onDeleteTimer} />
           </View>
 
           <View style={styles.spaced}>
