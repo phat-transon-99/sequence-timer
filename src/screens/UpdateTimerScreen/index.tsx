@@ -17,7 +17,7 @@ import { ColorType } from '../../components/ColorPicker/colorblock';
 import NeuralButton from './components/NeuralButtom';
 import Timer from '../../models/Timer';
 import { useAppDispatch } from '../../hooks/redux';
-import { deleteTimer } from '../../features/MangeTimer/thunk';
+import { deleteTimer, updateTimer } from '../../features/MangeTimer/thunk';
 
 export default function UpdateTimerScreen(): JSX.Element {
   // Navigation
@@ -58,6 +58,16 @@ export default function UpdateTimerScreen(): JSX.Element {
     navigation.goBack();
   }, []);
 
+  const onUpdateTimer = useCallback(() => {
+    dispatch(updateTimer({
+      id: timer.id,
+      name: name.current,
+      color: color.current,
+      duration: duration.current,
+    }));
+    navigation.goBack();
+  }, []);
+
   return (
     <DefaultView color={WHITE_COLOR}>
       <ScrollView>
@@ -83,7 +93,7 @@ export default function UpdateTimerScreen(): JSX.Element {
           </View>
 
           <View style={styles.buttonSpaced}>
-            <PrimaryButton title="Update timer" onPress={() => {}} />
+            <PrimaryButton title="Update timer" onPress={onUpdateTimer} />
           </View>
 
           <View style={styles.buttonSpaced}>

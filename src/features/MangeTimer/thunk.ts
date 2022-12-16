@@ -25,3 +25,11 @@ export const deleteTimer = createAsyncThunk(
     return result;
   },
 );
+
+export const updateTimer = createAsyncThunk(
+  'timers/updateTimer',
+  async (timer: Timer) => {
+    const updatedTimer = await TimerService.updateTimer(timer);
+    return updatedTimer;
+  },
+);
