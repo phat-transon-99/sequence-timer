@@ -1,3 +1,5 @@
+import { DropdownItem } from '../components/Dropdown/props';
+
 function prependZero(num: number): string {
   if (num < 10) {
     return `0${num}`;
@@ -32,4 +34,17 @@ export function extractTime(timeValue: string): number {
 
 export function convertToSeconds(minutes: number, seconds: number): number {
   return minutes * 60 + seconds;
+}
+
+export function extractMinutesAndSeconds(duration: number): { minutes: number, seconds: number } {
+  const seconds = duration % 60;
+  const minutes = Math.floor(duration / 60);
+  return { minutes, seconds };
+}
+
+export function findMatchingDropdownItem(
+  items: DropdownItem[],
+  numericValue: number,
+): DropdownItem | undefined {
+  return items.find((item) => item.value.startsWith(`${numericValue}`));
 }

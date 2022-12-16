@@ -3,8 +3,8 @@ import { Picker } from '@react-native-picker/picker';
 import { View } from 'react-native';
 import { Props } from '../props';
 
-export default function NativeDropdown({ items, onItemSelected }: Props): JSX.Element {
-  const [selected, setSelected] = useState<string>();
+export default function NativeDropdown({ value, items, onItemSelected }: Props): JSX.Element {
+  const [selected, setSelected] = useState<string | undefined>(value);
 
   const onChosen = useCallback((item: string) => {
     setSelected(item);

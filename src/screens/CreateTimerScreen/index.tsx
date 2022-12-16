@@ -83,7 +83,7 @@ export default function CreateTimerScreen(): JSX.Element {
 
           <View style={styles.spaced}>
             <Header>Select duration</Header>
-            <DurationPicker onDurationChosen={onDurationChosen} />
+            <DurationPicker value={duration.current} onDurationChosen={onDurationChosen} />
           </View>
 
           <View style={styles.buttonSpaced}>

@@ -69,7 +69,7 @@ export default function UpdateTimerScreen(): JSX.Element {
 
           <View style={styles.spaced}>
             <Header>Select duration</Header>
-            <DurationPicker onDurationChosen={onDurationChosen} />
+            <DurationPicker value={timer.duration} onDurationChosen={onDurationChosen} />
           </View>
 
           <View style={styles.buttonSpaced}>
