@@ -24,8 +24,6 @@ export default function UpdateTimerScreen(): JSX.Element {
   const navigation = useNavigation<NavigationProp<ParamListBase>>();
   const { params: timer } = useRoute() as { params: Timer };
 
-  console.log(timer);
-
   // Dispatch delete timer and update timer
   const dispatch = useAppDispatch();
 
@@ -103,7 +101,7 @@ export default function UpdateTimerScreen(): JSX.Element {
           </View>
 
           <View style={styles.spaced}>
-            <NeuralButton title="Go back" onPress={onGoBackChosen} />
+            <NeuralButton title="Cancel" onPress={onGoBackChosen} />
           </View>
         </View>
       </ScrollView>
