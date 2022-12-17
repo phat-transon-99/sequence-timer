@@ -1,6 +1,6 @@
 import { DropdownItem } from '../components/Dropdown/props';
 
-function prependZero(num: number): string {
+export function prependZero(num: number): string {
   if (num < 10) {
     return `0${num}`;
   }

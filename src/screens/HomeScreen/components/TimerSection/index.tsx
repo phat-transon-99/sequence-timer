@@ -1,6 +1,7 @@
 import React from 'react';
-import { View } from 'react-native';
+import { ScrollView } from 'react-native';
 import Timer from '../../../../models/Timer';
+import EditableNumberDisplay from './components/EditableNumberDisplay';
 import NameDisplay from './components/NameDisplay';
 import createStyle from './index.style';
 
@@ -11,8 +12,9 @@ export default function TimerSection({
 }: Props): JSX.Element {
   const styles = createStyle(color);
   return (
-    <View style={styles.container}>
+    <ScrollView contentContainerStyle={styles.container} keyboardShouldPersistTaps="handled">
       <NameDisplay name={name} />
-    </View>
+      <EditableNumberDisplay value="00" onValueChange={() => {}} />
+    </ScrollView>
   );
 }

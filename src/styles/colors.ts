@@ -5,3 +5,4 @@ export const GRAY_COLOR = '#A1A1A1';
 export const RED_COLOR = '#E63946';
 export const TRANSPARENT_COLOR = 'transparent';
 export const TRANSPARENT_GRAY_COLOR = 'rgba(161, 161, 161, 0.5)';
+export const TRANSPARENT_WHITE_COLOR = 'rgba(255, 255, 255, 0.5)';
