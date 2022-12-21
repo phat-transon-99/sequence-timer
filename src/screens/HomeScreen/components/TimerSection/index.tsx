@@ -1,20 +1,25 @@
 import React from 'react';
-import { ScrollView } from 'react-native';
+import { ScrollView, View } from 'react-native';
 import Timer from '../../../../models/Timer';
-import EditableNumberDisplay from './components/EditableNumberDisplay';
+import InvertedButton from './components/InvertedButton';
 import NameDisplay from './components/NameDisplay';
+import TimeDisplay from './components/TimeDisplay';
 import createStyle from './index.style';
 
 type Props = Timer;
 
 export default function TimerSection({
-  name, color,
+  name, color, duration,
 }: Props): JSX.Element {
   const styles = createStyle(color);
   return (
     <ScrollView contentContainerStyle={styles.container} keyboardShouldPersistTaps="handled">
       <NameDisplay name={name} />
-      <EditableNumberDisplay value="00" onValueChange={() => {}} />
+      <TimeDisplay duration={duration} />
+      <View style={styles.buttonContainer}>
+        <InvertedButton text="Stop" color={color} onPress={() => {}} />
+        <InvertedButton text="Reset" color={color} onPress={() => {}} />
+      </View>
     </ScrollView>
   );
 }

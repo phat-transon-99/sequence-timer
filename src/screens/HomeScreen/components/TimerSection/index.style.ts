@@ -7,4 +7,8 @@ export default (color: string) => StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
   },
+  buttonContainer: {
+    flexDirection: 'row',
+    width: '80%',
+  },
 });

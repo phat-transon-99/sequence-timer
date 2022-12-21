@@ -1,12 +1,11 @@
 import { StyleSheet } from 'react-native';
 import {
   BLACK_COLOR,
-  WHITE_COLOR,
 } from '../../styles/colors';
 import { BORDERRADIUS_XSMALL, PADDING_SMALL } from '../../styles/dims';
 import { FONTFAMILY_SEMIBOLD, FONTSIZE_SMALL, FONTWEIGHT_SEMIBOLD } from '../../styles/fonts';
 
-export default (color: string) => StyleSheet.create({
+export default (color: string, textColor: string) => StyleSheet.create({
   container: {
     alignItems: 'center',
     backgroundColor: color,
@@ -21,9 +20,10 @@ export default (color: string) => StyleSheet.create({
     },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
+    width: '100%',
   },
   text: {
-    color: WHITE_COLOR,
+    color: textColor,
     fontFamily: FONTFAMILY_SEMIBOLD,
     fontSize: FONTSIZE_SMALL,
     fontWeight: FONTWEIGHT_SEMIBOLD,

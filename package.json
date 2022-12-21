@@ -27,7 +27,8 @@
     "react-native-screens": "~3.18.0",
     "react-native-web": "~0.18.9",
     "react-redux": "8.0.5",
-    "expo-sqlite": "~11.0.0"
+    "expo-sqlite": "~11.0.0",
+    "react-native-svg": "13.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",

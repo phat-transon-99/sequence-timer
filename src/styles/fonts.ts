@@ -4,7 +4,7 @@ export const FONTSIZE_SMALL = 16;
 export const FONTSIZE_MEDIUM = 20;
 export const FONTSIZE_LARGE = 24;
 export const FONTSIZE_XLARGE = 40;
-export const FONTSIZE_ULARGE = 120;
+export const FONTSIZE_ULARGE = 60;
 
 // [] FONT FAMILY
 export const FONTFAMILY_REGULAR = 'Poppins_400Regular';

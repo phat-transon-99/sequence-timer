@@ -6,7 +6,7 @@ type Props = {
 };
 
 export default forwardRef<BottomSheet, Props>(({ children }: Props, ref) => {
-  const snapPoints = useMemo(() => ['15%', '75%'], []);
+  const snapPoints = useMemo(() => ['14%', '75%'], []);
   return (
     <BottomSheet ref={ref} index={1} snapPoints={snapPoints}>
       { children }

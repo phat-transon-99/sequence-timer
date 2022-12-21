@@ -1,6 +1,6 @@
 import React from 'react';
 import CustomButton from '../../../components/CustomButton';
-import { PRIMARY_COLOR } from '../../../styles/colors';
+import { PRIMARY_COLOR, WHITE_COLOR } from '../../../styles/colors';
 
 type Props = {
   title: string,
@@ -9,6 +9,6 @@ type Props = {
 
 export default function PrimaryButton({ title, onPress }: Props): JSX.Element {
   return (
-    <CustomButton text={title} onPress={onPress} color={PRIMARY_COLOR} />
+    <CustomButton text={title} onPress={onPress} color={PRIMARY_COLOR} textColor={WHITE_COLOR} />
   );
 }
