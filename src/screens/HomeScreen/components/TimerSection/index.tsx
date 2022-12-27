@@ -13,13 +13,18 @@ export default function TimerSection({
 }: Props): JSX.Element {
   const styles = createStyle(color);
   return (
-    <ScrollView contentContainerStyle={styles.container} keyboardShouldPersistTaps="handled">
-      <NameDisplay name={name} />
-      <TimeDisplay duration={duration} percentage={0.25} />
-      <View style={styles.buttonContainer}>
-        <InvertedButton text="Stop" color={color} onPress={() => {}} />
-        <InvertedButton text="Reset" color={color} onPress={() => {}} />
-      </View>
-    </ScrollView>
+    <View style={styles.container}>
+      <ScrollView
+        contentContainerStyle={styles.contentContainer}
+        keyboardShouldPersistTaps="handled"
+      >
+        <NameDisplay name={name} />
+        <TimeDisplay duration={duration} percentage={0.25} />
+        <View style={styles.buttonContainer}>
+          <InvertedButton text="Stop" color={color} onPress={() => {}} />
+          <InvertedButton text="Reset" color={color} onPress={() => {}} />
+        </View>
+      </ScrollView>
+    </View>
   );
 }
