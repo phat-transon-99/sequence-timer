@@ -8,21 +8,33 @@ import styles from './index.style';
 import { TIME_DISPLAY_WIDTH, TIME_DISPLAY_HEIGHT } from '../../../../../../constants/dims';
 
 type Props = {
-  duration: number
+  duration: number,
+  percentage: number
 };
 
-export default function TimeDisplay({ duration }: Props): JSX.Element {
+export default function TimeDisplay({ duration, percentage }: Props): JSX.Element {
   return (
     <View style={styles.container}>
       <View style={{ position: 'absolute' }}>
-        <Svg height={TIME_DISPLAY_HEIGHT} width={TIME_DISPLAY_WIDTH} viewBox="0 0 100 100">
-          <Circle cx="50" cy="50" r="40" stroke={WHITE_COLOR} strokeWidth="8" fill={TRANSPARENT_COLOR} />
+        <Svg height={TIME_DISPLAY_HEIGHT} width={TIME_DISPLAY_WIDTH} viewBox="0 0 120 120">
+          <Circle
+            cx="60"
+            cy="60"
+            r="50"
+            stroke={WHITE_COLOR}
+            strokeWidth="8"
+            strokeDasharray={314}
+            strokeDashoffset={314 * percentage}
+            fill={TRANSPARENT_COLOR}
+          />
         </Svg>
       </View>
 
-      <CustomFontText>
-        <Text style={styles.text}>{ formatTimeStandard(duration) }</Text>
-      </CustomFontText>
+      <View style={styles.textContainer}>
+        <CustomFontText>
+          <Text style={styles.text}>{ formatTimeStandard(duration) }</Text>
+        </CustomFontText>
+      </View>
     </View>
   );
 }

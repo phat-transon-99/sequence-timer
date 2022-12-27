@@ -9,9 +9,17 @@ export default StyleSheet.create({
     justifyContent: 'center',
     marginVertical: MARGIN_XLARGE,
     height: '30%',
+    transform: [
+      { rotate: '-90deg' },
+    ],
   },
   text: {
     color: WHITE_COLOR,
     fontSize: FONTSIZE_ULARGE,
+  },
+  textContainer: {
+    transform: [
+      { rotate: '90deg' },
+    ],
   },
 });

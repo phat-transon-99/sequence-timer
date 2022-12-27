@@ -15,7 +15,7 @@ export default function TimerSection({
   return (
     <ScrollView contentContainerStyle={styles.container} keyboardShouldPersistTaps="handled">
       <NameDisplay name={name} />
-      <TimeDisplay duration={duration} />
+      <TimeDisplay duration={duration} percentage={0.25} />
       <View style={styles.buttonContainer}>
         <InvertedButton text="Stop" color={color} onPress={() => {}} />
         <InvertedButton text="Reset" color={color} onPress={() => {}} />
