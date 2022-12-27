@@ -6,10 +6,10 @@ import NameDisplay from './components/NameDisplay';
 import TimeDisplay from './components/TimeDisplay';
 import createStyle from './index.style';
 
-type Props = Timer;
+type Props = Timer & { percentage: number };
 
 export default function TimerSection({
-  name, color, duration,
+  name, color, duration, percentage,
 }: Props): JSX.Element {
   const styles = createStyle(color);
   return (
@@ -19,7 +19,7 @@ export default function TimerSection({
         keyboardShouldPersistTaps="handled"
       >
         <NameDisplay name={name} />
-        <TimeDisplay duration={duration} percentage={0.25} />
+        <TimeDisplay duration={duration} percentage={percentage} />
         <View style={styles.buttonContainer}>
           <InvertedButton text="Stop" color={color} onPress={() => {}} />
           <InvertedButton text="Reset" color={color} onPress={() => {}} />
