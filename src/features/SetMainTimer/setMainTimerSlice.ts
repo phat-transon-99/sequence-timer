@@ -26,3 +26,5 @@ const setMainTimerSlice = createSlice({
 });
 
 export default setMainTimerSlice.reducer;
+
+export const { setMainTimer, setProgress } = setMainTimerSlice.actions;
