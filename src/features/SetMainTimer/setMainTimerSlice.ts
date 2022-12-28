@@ -22,9 +22,12 @@ const setMainTimerSlice = createSlice({
     setProgress: (state, action: PayloadAction<number>) => {
       state.progress = action.payload;
     },
+    setTime: (state, action: PayloadAction<number>) => {
+      state.timer.duration = action.payload;
+    },
   },
 });
 
 export default setMainTimerSlice.reducer;
 
-export const { setMainTimer, setProgress } = setMainTimerSlice.actions;
+export const { setMainTimer, setProgress, setTime } = setMainTimerSlice.actions;

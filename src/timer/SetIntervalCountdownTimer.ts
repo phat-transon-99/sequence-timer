@@ -1,4 +1,4 @@
-import { Timer } from './AbstractTimer';
+import Timer from './AbstractCountdownTimer';
 
 export default class SetIntervalTimer extends Timer {
   private timeStart: number = 0;
@@ -23,6 +23,11 @@ export default class SetIntervalTimer extends Timer {
     clearInterval(this.intervalId);
   }
 
+  clear(): void {
+    // Stop timer by clearing the set interval
+    clearInterval(this.intervalId);
+  }
+
   private onIteration(): void {
     // Get the current timer
     const now = Date.now();
@@ -31,7 +36,15 @@ export default class SetIntervalTimer extends Timer {
     // Results is in milliseconds
     const secondsPassed = now - this.timeStart + this.timeElapsed;
 
-    // Call the callback
-    this.callback(Math.floor(secondsPassed / 1000));
+    // Calculate time left
+    const timeLeft = this.duration - Math.floor(secondsPassed / 1000);
+
+    if (timeLeft <= 0) {
+      // Clear the interval if 0 is reached
+      this.clear();
+      this.callback(0);
+    } else {
+      this.callback(timeLeft);
+    }
   }
 }
