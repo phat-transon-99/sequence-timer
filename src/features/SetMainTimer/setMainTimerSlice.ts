@@ -4,12 +4,10 @@ import Timer from '../../models/Timer';
 
 type State = {
   timer: Timer,
-  progress: number,
 };
 
 const initialState: State = {
   timer: fiveMinuteTimer,
-  progress: 0.25,
 };
 
 const setMainTimerSlice = createSlice({
@@ -19,15 +17,9 @@ const setMainTimerSlice = createSlice({
     setMainTimer: (state, action: PayloadAction<Timer>) => {
       state.timer = action.payload;
     },
-    setProgress: (state, action: PayloadAction<number>) => {
-      state.progress = action.payload;
-    },
-    setTime: (state, action: PayloadAction<number>) => {
-      state.timer.duration = action.payload;
-    },
   },
 });
 
 export default setMainTimerSlice.reducer;
 
-export const { setMainTimer, setProgress, setTime } = setMainTimerSlice.actions;
+export const { setMainTimer } = setMainTimerSlice.actions;

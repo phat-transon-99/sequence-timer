@@ -1,11 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
 import manageTimerReducer from '../features/MangeTimer/manageTimerSlice';
-import setMainTimerSlice from '../features/SetMainTimer/setMainTimerSlice';
+import setMainTimerReducer from '../features/SetMainTimer/setMainTimerSlice';
+import runTimerReducer from '../features/RunTimer/runTimerSlice';
 
 export const store = configureStore({
   reducer: {
     timers: manageTimerReducer,
-    mainTimer: setMainTimerSlice,
+    mainTimer: setMainTimerReducer,
+    runTimer: runTimerReducer,
   },
 });
 

@@ -43,6 +43,7 @@ export default class SetIntervalTimer extends Timer {
       // Clear the interval if 0 is reached
       this.clear();
       this.callback(0);
+      this.endCallback();
     } else {
       this.callback(timeLeft);
     }
