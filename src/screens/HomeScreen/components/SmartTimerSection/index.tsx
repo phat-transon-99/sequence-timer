@@ -48,7 +48,7 @@ export default function SmartTimerSection() {
       timer.start();
       dispatch(setStarted(true));
     }
-  }, [startDuration, hasStarted]);
+  }, [startDuration]);
 
   return (
     <TimerSection
