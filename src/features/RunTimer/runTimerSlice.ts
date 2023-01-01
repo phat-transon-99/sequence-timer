@@ -5,6 +5,7 @@ const initialState = {
   duration: 0,
   progress: 0,
   hasStarted: false,
+  hasStopped: false,
 };
 
 const runTimerSlice = createSlice({
@@ -13,6 +14,9 @@ const runTimerSlice = createSlice({
   reducers: {
     setStarted: (state, action: PayloadAction<boolean>) => {
       state.hasStarted = action.payload;
+    },
+    setStopped: (state, action: PayloadAction<boolean>) => {
+      state.hasStopped = action.payload;
     },
     setStartDuration: (state, action: PayloadAction<number>) => {
       state.startDuration = action.payload;
@@ -25,6 +29,8 @@ const runTimerSlice = createSlice({
   },
 });
 
-export const { setStartDuration, setDuration, setStarted } = runTimerSlice.actions;
+export const {
+  setStartDuration, setDuration, setStarted, setStopped,
+} = runTimerSlice.actions;
 
 export default runTimerSlice.reducer;
