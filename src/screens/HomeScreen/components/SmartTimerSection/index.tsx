@@ -12,8 +12,16 @@ import {
   selectStartDuration,
 } from '../../../../features/RunTimer/selector';
 import { setDuration, setStarted, setStopped } from '../../../../features/RunTimer/runTimerSlice';
+import AbstractSoundPlayer from '../../../../sound/AbstractSoundPlayer';
+import LocalSoundPlayer from '../../../../sound/LocalSoundPlayer';
+
 // Create timer
 let timer: AbstractCountdownTimer;
+
+// Create sound player
+const sound = require('../../../../../assets/sounds/alarm-sound-1.mp3');
+
+const player: AbstractSoundPlayer = new LocalSoundPlayer(sound);
 
 export default function SmartTimerSection() {
   // Extract main timer
@@ -36,6 +44,7 @@ export default function SmartTimerSection() {
 
   const onTimerEndCallback = useCallback(() => {
     dispatch(setStarted(false));
+    player.play();
   }, []);
 
   // Create timer
